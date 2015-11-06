@@ -11,7 +11,7 @@ echo "(c) 2015 Thomas Leathers"
 echo "RULES:
 The player (Purple) enters a number from 1-9. The computer (cyan) 
 also picks a number from 1-9. A pacer is chosen randomly.
-(a number from 3-7)(Yellow). the closer a player is to the pacer
+also a number from 1-9.(Yellow). the closer a player is to the pacer
 the lower that player's score. the player with the lowest score, wins."
 echo "Press enter to continue."
 pos=
@@ -28,7 +28,7 @@ will also pick a number. "
 nump=0
 read nump
 
-pacer="$(( $RANDOM % 5 + 3 ))"
+pacer="$(( $RANDOM % 9 + 1 ))"
 numc="$(( $RANDOM % 9 + 1 ))"
 tput clear
 echo "Maxapacer"
