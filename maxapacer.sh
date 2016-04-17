@@ -7,7 +7,7 @@ $TIMG "$WHEREAMI/title.TC"
 beep -f 120
 beep -f 140
 beep -f 180
-echo "(c) 2015 Thomas Leathers"
+echo "(c) 2015-2016 Thomas Leathers"
 echo "RULES:
 The player (Purple) enters a number from 1-9. The computer (cyan) 
 also picks a number from 1-9. A pacer is chosen randomly.
