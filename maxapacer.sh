@@ -1,9 +1,9 @@
 #!/bin/bash
 WHEREAMI="$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd && echo)"
 cd $WHEREAMI
-TIMG="$WHEREAMI/T-IMG.sh"
-TIMGN="$WHEREAMI/T-IMG-NTP.sh"
-$TIMG "$WHEREAMI/title.TIMG"
+TIMG="source"
+TIMGN="source"
+$TIMG "$WHEREAMI/title.TC"
 beep -f 120
 beep -f 140
 beep -f 180
@@ -20,23 +20,23 @@ enmpos=2
 read null
 tput clear
 echo "Maxapacer"
-$TIMGN "$WHEREAMI/P0.TIMG"
-$TIMGN "$WHEREAMI/Y0.TIMG"
-$TIMGN "$WHEREAMI/C0.TIMG"
+$TIMGN "$WHEREAMI/P0.TC"
+$TIMGN "$WHEREAMI/Y0.TC"
+$TIMGN "$WHEREAMI/C0.TC"
 echo "enter a number from 1-9. the computer (cyan) 
 will also pick a number. "
 nump=0
 read nump
-
+#$(($line+1))
 pacer="$(( $RANDOM % 9 + 1 ))"
 numc="$(( $RANDOM % 9 + 1 ))"
 tput clear
 echo "Maxapacer"
-$TIMGN "$WHEREAMI/P${nump}.TIMG"
-$TIMGN "$WHEREAMI/Y${pacer}.TIMG"
-$TIMGN "$WHEREAMI/C${numc}.TIMG"
-cscore=$(echo "${pacer}-${numc}" | bc)
-pscore=$(echo "${pacer}-${nump}" | bc)
+$TIMGN "$WHEREAMI/P${nump}.TC"
+$TIMGN "$WHEREAMI/Y${pacer}.TC"
+$TIMGN "$WHEREAMI/C${numc}.TC"
+cscore=$((${pacer}-${numc}))
+pscore=$((${pacer}-${nump}))
 num="
 0
 1
@@ -73,19 +73,19 @@ read null2
 tput clear
 echo "Maxapacer"
 if [ "$Npscore" = "$Ncscore" ]; then
-  $TIMGN "$WHEREAMI/TIE.TIMG"
+  $TIMGN "$WHEREAMI/TIE.TC"
   echo "Player's score:$Npscore"
   echo "Computer's score:$Ncscore"
   echo "Pacer:$pacer"
 fi
-if [ "$(echo "${Npscore}>${Ncscore}" | bc)" = "1"  ]; then
-  $TIMGN "$WHEREAMI/COMPUTER.TIMG"
+if [ "$((${Npscore}>${Ncscore}))" = "1"  ]; then
+  $TIMGN "$WHEREAMI/COMPUTER.TC"
   echo "Player's score:$Npscore"
   echo "Computer's score:$Ncscore"
   echo "Pacer:$pacer"
 fi
-if [ "$(echo "${Npscore}<${Ncscore}" | bc)" = "1"  ]; then
-  $TIMGN "$WHEREAMI/PLAYER.TIMG"
+if [ "$((${Npscore}<${Ncscore}))" = "1"  ]; then
+  $TIMGN "$WHEREAMI/PLAYER.TC"
   echo "Player's score:$Npscore"
   echo "Computer's score:$Ncscore"
   echo "Pacer:$pacer"

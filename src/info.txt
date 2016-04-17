@@ -1,0 +1,13 @@
+these are the origional TIMG image files.
+
+T-CODE is designed to translate them to  espape codes, ready to be copied into 
+a bash script.
+
+TIMGTRANS.sh is a wrapper that will translate all these files automatically 
+and put them in text files with the .TC extention.
+(example.TIMG would become example.TC)
+if you make changes to the source TIMG images i recommend using this wrapper 
+script, then copying over the appropiate files to the same directory 
+as maxapacer.sh.
+
+after that you should copy them over the .TC
